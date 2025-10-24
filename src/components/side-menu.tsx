@@ -79,17 +79,14 @@ export default function SideBar(): JSX.Element {
   const baseFontColor = 'white';
   const childBaseColor = "#134678";
 
-  // ✅ Toggle sidebar collapse
   const toggleCollapse = (): void => {
     setCollapsed((prev) => !prev);
   };
 
-  // ✅ Toggle submenu open/close
   const toggleMenu = (id: string): void => {
     setOpenMenus((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  // ✅ Adjust main container width dynamically
   useEffect(() => {
     const container = document.getElementById('main-container');
     if (container) {
