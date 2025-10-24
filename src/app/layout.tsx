@@ -17,10 +17,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <div className="h-12 border flex items-center justify-center bg-white shadow-sm z-50">
-          Topbar
+        <div className="h-12 flex items-center justify-center bg-white shadow-lg z-50">
+
         </div>
-        <div className="flex transition-all duration-300 ease-in-out">
+        <div className="flex transition-all duration-300 ease-in-out bg-[#f2F4F8] h-screen">
           <SideBar />
           <div
             id="main-container"
