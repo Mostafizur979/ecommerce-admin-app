@@ -118,17 +118,6 @@ export default function SideBar(): JSX.Element {
         onClick={toggleCollapse}
       />
 
-      {/* ✅ User Info */}
-      {!collapsed && (
-        <div className="flex gap-[5px] p-4  items-center"  style={{ color: baseFontColor }}>
-          <FaUser size={24} className="rounded-full" />
-          <div className="text-[14px]">
-            <p>Mostafizur Rahman</p>
-            <p>Super Admin</p>
-          </div>
-        </div>
-      )}
-
       {/* ✅ Menu Items */}
       <div style={{ color: baseFontColor }}>
         {menu.map((item) => (

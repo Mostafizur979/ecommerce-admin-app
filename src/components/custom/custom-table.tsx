@@ -1,19 +1,35 @@
-export default function Table({ data, columns } : {data:any, columns:any}) {
+export default function Table({ data, columns }: { data: any, columns: any }) {
     return (
-        <div>
-            <table className="min-w-full  -gray-300 text-sm bg-white">
+        <div className="bg-white shadow-sm">
+            <table className="min-w-full text-[14px] bg-white">
                 <thead className="">
-                    <tr className="border border-gray-300">
+                    <tr className="border border-gray-200 bg-gray-200">
                         {columns?.map((column: any, idx: any) => (
-                            <td key={idx} className={`px-3 py-2 ${column?.className && column?.className}`}>{column?.title}</td>
+                            <td
+                                key={idx}
+                                style={{
+                                    width: column?.width,
+                                    textAlign: column?.align
+                                }}
+                                className="px-3 py-2 font-semibold">
+                                {column?.title}
+                            </td>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
                     {data?.map((item: any, index: any) => (
-                        <tr key={index} className={`border border-gray-300 bg-blue-300 ${index % 2 == 0 ? 'bg-white' : 'bg-gray-500'}`}>
+                        <tr key={index} className={`border border-gray-200 ${index % 2 == 0 ? 'bg-white' : 'bg-gray-50'}`}>
                             {columns?.map((column: any, idx: any) => (
-                                <td className={`px-3 py-1 ${column?.className && column?.className}`}>{item[column.key]}</td>
+                                <td
+                                    key={idx}
+                                    style={{
+                                        width: column?.width,
+                                        textAlign: column?.align
+                                    }}
+                                    className="px-3">
+                                    {item[column.key]}
+                                </td>
                             ))}
                         </tr>
                     ))}
